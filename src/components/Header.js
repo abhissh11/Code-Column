@@ -41,10 +41,10 @@ export default function Header() {
           <>
             <div className="flex absolute text-white bg-blue-500 p-7 rounded-md right-0 md:mx-20 mx-4 mt-5">
               <ul className="flex flex-col gap-4 ">
-                <Link to="/">Resource Hub</Link>
-                <Link to="/">Interview Ques.</Link>
-                <Link to="/">Courses</Link>
-                <Link to="/">Join the Community</Link>
+                <Link to="/resource-hub">Resource Hub</Link>
+                <Link to="/interview-ques">Interview Ques.</Link>
+                <Link to="/courses">Courses</Link>
+                <Link to="/community">Join the Community</Link>
               </ul>
             </div>
           </>
