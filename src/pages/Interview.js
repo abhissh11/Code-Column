@@ -1,3 +1,5 @@
+import React from "react";
+import { Link } from "react-router-dom";
 import {
   Atom,
   FileQuestion,
@@ -5,56 +7,52 @@ import {
   Handshake,
   MoveRight,
 } from "lucide-react";
-import React from "react";
-import { Link } from "react-router-dom";
+
+const cardData = [
+  {
+    title: "70 JavaScript Questions",
+    icon: FileStack,
+    link: "/javascript-questions",
+  },
+  {
+    title: "Top 150 Frontend Interview Ques.",
+    icon: FileQuestion,
+    link: "/frontend-questions",
+  },
+  {
+    title: "150 ReactJS Questions.",
+    icon: Atom,
+    link: "/reactjs-questions",
+  },
+  {
+    title: "200 MERN Interview Questions.",
+    icon: Handshake,
+    link: "/mern-questions",
+  },
+];
 
 export default function Interview() {
   return (
-    <>
-      <div className="mx-4 md:px-20 mt-10">
-        <div className="flex flex-row flex-wrap gap-10 justify-center">
-          <Link to="/">
-            <div
-              className="w-64 h-44 bg-sky-100 px-4 py-6 flex flex-col gap-2 justify-center items-center
-           text-lg font-semibold border-2 border-blue-200 rounded-md hover:border-blue-500 hover:scale-105 transition-all"
-            >
-              <FileStack size={32} className="text-blue-500" />
-              <h2 className="text-center">70 JavaScript Questions</h2>
-              <MoveRight />
-            </div>
-          </Link>
-          <Link to="/">
-            <div
-              className="w-64 h-44 bg-sky-100 px-10 py-6 flex flex-col gap-2 justify-center items-center
-           text-lg font-semibold border-2 border-blue-200 rounded-md hover:border-blue-500 hover:scale-105 transition-all"
-            >
-              <FileQuestion size={32} className="text-blue-500" />
-              <h2 className="text-center">Top 150 Frontend Interview Ques.</h2>
-              <MoveRight />
-            </div>
-          </Link>
-          <Link to="/">
-            <div
-              className="w-64 h-44 bg-sky-100 px-4 py-6 flex flex-col gap-2 justify-center items-center
-           text-lg font-semibold border-2 border-blue-200 rounded-md hover:border-blue-500 hover:scale-105 transition-all"
-            >
-              <Atom size={32} className="text-blue-500" />
-              <h2 className="text-center">150 ReactJS Questions.</h2>
-              <MoveRight />
-            </div>
-          </Link>
-          <Link to="/">
-            <div
-              className="w-64 h-44 bg-sky-100 px-4 py-6 flex flex-col gap-2 justify-center items-center
-           text-lg font-semibold border-2 border-blue-200 rounded-md hover:border-blue-500 hover:scale-105 transition-all"
-            >
-              <Handshake size={32} className="text-blue-500" />
-              <h2 className="text-center">200 MERN Interview Questions.</h2>
-              <MoveRight />
-            </div>
-          </Link>
-        </div>
+    <div className="mx-4 md:px-20 mt-10">
+      <div className="mt-20">
+        <h1 className="text-3xl font-bold text-blue-500">
+          Explore and learn from the Varied range of Questions:
+        </h1>
       </div>
-    </>
+      <div className="flex flex-row flex-wrap gap-10 justify-center mt-20">
+        {cardData.map((card, index) => (
+          <Link key={index} to={card.link}>
+            <div
+              className="w-64 h-44 bg-sky-100 px-4 py-6 flex flex-col gap-2 justify-center items-center
+           text-lg font-semibold border-2 border-blue-200 rounded-md hover:border-blue-500 hover:scale-105 transition-all"
+            >
+              <card.icon size={32} className="text-blue-500" />
+              <h2 className="text-center">{card.title}</h2>
+              <MoveRight />
+            </div>
+          </Link>
+        ))}
+      </div>
+    </div>
   );
 }

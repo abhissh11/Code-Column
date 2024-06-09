@@ -20,9 +20,11 @@ export default function Hero() {
               tempora rem quod accusantium. Officiis blanditiis pariatur
               maiores.
             </p>
-            <button className="px-4 py-2 bg-blue-500 w-[14rem] rounded-md text-white hover:bg-blue-700">
-              <Link to="/courses">Enroll Now</Link>
-            </button>
+            <Link to="/courses">
+              <button className="px-4 py-2 bg-blue-500 w-[14rem] rounded-md text-white hover:bg-blue-700">
+                Enroll Now
+              </button>
+            </Link>
           </div>
           <div className=" p-1 md:mt-10 rounded-md w-[20rem] h-[12rem] md:w-[32rem] md:h-[18rem] bg-blue-500">
             <iframe
